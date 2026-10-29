@@ -1,1 +1,759 @@
 
+```html
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#075b38">
+<title>Nirmala Trust Foundation | Rohtas, Bihar</title>
+<meta name="description" content="Nirmala Trust Foundation, Rohtas, Bihar. बच्चों को भोजन, शिक्षा, स्वास्थ्य सहायता और खुशियाँ देने के लिए हमारे साथ जुड़ें।">
+
+<style>
+:root {
+  --green: #075b38;
+  --dark: #063c28;
+  --orange: #ffad22;
+  --cream: #fffaf0;
+  --text: #24332b;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--text);
+  background: #fff;
+  line-height: 1.65;
+}
+a { text-decoration: none; color: inherit; }
+img { display: block; max-width: 100%; }
+button { cursor: pointer; }
+.container { width: min(1150px, 92%); margin: auto; }
+
+.topbar {
+  background: var(--dark);
+  color: white;
+  text-align: center;
+  padding: 8px;
+  font-size: 14px;
+}
+header {
+  background: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 3px 15px #00000012;
+}
+.nav {
+  min-height: 82px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  min-width: 0;
+}
+.logo {
+  width: 62px;
+  height: 62px;
+  border: 3px solid var(--orange);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  color: var(--green);
+  font-size: 15px;
+  font-weight: 900;
+  text-align: center;
+  line-height: 1.1;
+  flex-shrink: 0;
+}
+.brand h2 {
+  margin: 0;
+  font-size: clamp(14px, 2vw, 22px);
+  color: var(--green);
+  line-height: 1.3;
+}
+.brand small {
+  color: #b36a00;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  font-weight: bold;
+  font-size: 14px;
+}
+.navlinks a:hover { color: #df8700; }
+.btn {
+  display: inline-block;
+  border: 0;
+  border-radius: 9px;
+  padding: 12px 22px;
+  background: var(--orange);
+  color: #1d2c20;
+  font-weight: bold;
+}
+.btn.green { background: var(--green); color: white; }
+.menu-btn {
+  display: none;
+  border: 0;
+  background: var(--green);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 8px;
+  font-size: 20px;
+}
+
+.hero {
+  min-height: 570px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(90deg, #063c28ee 0%, #063c28b8 48%, #063c2850 100%),
+    url("images/children-event.jpg") center/cover,
+    #075b38;
+  color: white;
+}
+.hero-content { padding: 75px 0; max-width: 720px; }
+.tag {
+  display: inline-block;
+  background: #ffffff20;
+  border: 1px solid #ffffff80;
+  padding: 6px 14px;
+  border-radius: 50px;
+  font-size: 14px;
+}
+.hero h1 {
+  font-size: clamp(35px, 5.6vw, 64px);
+  line-height: 1.13;
+  margin: 20px 0;
+}
+.hero h1 span { color: #ffc247; }
+.hero p { font-size: 18px; max-width: 610px; color: #f3fff7; }
+.hero-actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+.btn.outline { background: transparent; border: 2px solid white; color: white; }
+
+.stats {
+  background: var(--orange);
+  padding: 22px 0;
+}
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+  gap: 15px;
+}
+.stats strong { display: block; font-size: 23px; color: var(--dark); }
+.stats span { font-size: 14px; }
+
+section { padding: 75px 0; scroll-margin-top: 90px; }
+.section-head { text-align: center; max-width: 760px; margin: 0 auto 35px; }
+.eyebrow { color: #c47a00; font-weight: bold; text-transform: uppercase; letter-spacing: 2px; }
+.section-head h2 { color: var(--green); font-size: clamp(28px, 4vw, 40px); line-height: 1.2; margin: 10px 0; }
+.section-head p { color: #637168; }
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 45px;
+  align-items: center;
+}
+.about-photo img {
+  width: 100%;
+  height: 440px;
+  object-fit: cover;
+  border-radius: 22px;
+}
+.about-copy h2 { color: var(--green); font-size: 36px; line-height: 1.2; }
+.check-list { padding: 0; list-style: none; }
+.check-list li { padding: 7px 0; }
+.check-list li::before { content: "✓"; color: #078348; font-weight: 900; margin-right: 10px; }
+
+.works { background: var(--cream); }
+.cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+.card {
+  background: white;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 5px 25px #183d2610;
+}
+.card img { width: 100%; height: 210px; object-fit: cover; }
+.card-body { padding: 20px; }
+.card h3 { color: var(--green); margin: 0 0 8px; }
+.card p { margin: 0; color: #647168; font-size: 14px; }
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+.gallery-grid a {
+  display: block;
+  overflow: hidden;
+  border-radius: 14px;
+  background: #edf1ed;
+}
+.gallery-grid img {
+  width: 100%;
+  height: 290px;
+  object-fit: cover;
+  transition: transform .3s;
+}
+.gallery-grid a:hover img { transform: scale(1.04); }
+.gallery-note {
+  text-align: center;
+  margin-top: 22px;
+  color: #637168;
+  font-size: 14px;
+}
+
+.packages { background: #f5faf6; }
+.package-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 22px;
+}
+.package {
+  background: white;
+  padding: 28px 22px;
+  border-radius: 18px;
+  border-top: 5px solid var(--orange);
+  box-shadow: 0 8px 25px #0000000b;
+  text-align: center;
+}
+.package:nth-child(2) { border-top-color: #1477df; }
+.package:nth-child(3) { border-top-color: #8a46c7; }
+.package h3 { color: var(--green); font-size: 21px; }
+.price { font-size: 38px; color: #dc7700; font-weight: 900; }
+.package ul { padding-left: 20px; text-align: left; }
+.package li { margin: 8px 0; }
+
+.donation-note {
+  margin: 28px auto 0;
+  max-width: 850px;
+  text-align: center;
+  background: #fff4d9;
+  border-radius: 12px;
+  padding: 18px;
+  font-size: 14px;
+}
+
+.banner {
+  background: linear-gradient(120deg, var(--green), #087b4b);
+  color: white;
+  text-align: center;
+  padding: 55px 20px;
+}
+.banner h2 { font-size: clamp(27px, 4vw, 42px); margin: 0 0 12px; }
+.banner p { max-width: 700px; margin: 0 auto 25px; }
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 35px;
+}
+.contact-info {
+  background: var(--green);
+  color: white;
+  padding: 30px;
+  border-radius: 18px;
+}
+.contact-info h3 { font-size: 26px; margin-top: 0; }
+.contact-item { padding: 13px 0; border-bottom: 1px solid #ffffff30; }
+.contact-item:last-child { border-bottom: 0; }
+.contact-form {
+  background: #f6f8f6;
+  padding: 28px;
+  border-radius: 18px;
+}
+.field { margin-bottom: 15px; }
+.field label { display: block; font-weight: bold; margin-bottom: 5px; }
+.field input, .field textarea, .field select {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #d4ddd5;
+  border-radius: 8px;
+  background: white;
+  font: inherit;
+}
+.field textarea { min-height: 100px; resize: vertical; }
+.contact-form .btn { width: 100%; }
+
+footer {
+  background: #052d1e;
+  color: white;
+  padding: 35px 0 20px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: 30px;
+}
+footer h3 { color: #ffc247; }
+footer a { display: block; margin: 7px 0; color: #e0eee5; }
+.copyright {
+  border-top: 1px solid #ffffff25;
+  margin-top: 25px;
+  padding-top: 18px;
+  text-align: center;
+  font-size: 13px;
+}
+.whatsapp {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 200;
+  background: #20bd62;
+  color: white;
+  border-radius: 50px;
+  padding: 13px 19px;
+  font-weight: bold;
+  box-shadow: 0 4px 18px #0003;
+}
+
+@media(max-width:900px) {
+  .menu-btn { display: block; }
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 82px;
+    left: 0;
+    width: 100%;
+    background: white;
+    padding: 20px 5%;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 15px;
+    box-shadow: 0 8px 12px #0001;
+  }
+  .navlinks.open { display: flex; }
+  .navlinks .btn { text-align: center; }
+  .cards { grid-template-columns: repeat(2, 1fr); }
+  .about-grid { gap: 25px; }
+}
+@media(max-width:600px) {
+  .topbar { font-size: 12px; }
+  .nav { min-height: 75px; }
+  .logo { width: 48px; height: 48px; font-size: 12px; }
+  .brand { gap: 8px; }
+  .brand small { font-size: 9px; letter-spacing: 1px; }
+  .navlinks { top: 75px; }
+  .hero { min-height: 520px; }
+  .hero-content { padding: 55px 0; }
+  .hero p { font-size: 16px; }
+  section { padding: 52px 0; }
+  .stats-grid { grid-template-columns: 1fr; gap: 12px; }
+  .about-grid, .contact-grid, .footer-grid { grid-template-columns: 1fr; }
+  .about-photo img { height: 330px; }
+  .cards { grid-template-columns: 1fr 1fr; gap: 12px; }
+  .card img { height: 150px; }
+  .card-body { padding: 13px; }
+  .card h3 { font-size: 16px; }
+  .card p { font-size: 13px; }
+  .gallery-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+  .gallery-grid img { height: 190px; }
+  .package-grid { grid-template-columns: 1fr; }
+  .whatsapp { bottom: 12px; right: 12px; padding: 10px 15px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+  ❤️ सेवा, सहयोग और बेहतर भविष्य — Nirmala Trust Foundation
+</div>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home" aria-label="Nirmala Trust Foundation Home">
+      <div class="logo">NIRMALA<br>TRUST</div>
+      <div>
+        <h2>NIRMALA TRUST FOUNDATION</h2>
+        <small>TOGETHER WE CAN...</small>
+      </div>
+    </a>
+
+    <button class="menu-btn" id="menuBtn" aria-label="Open navigation" aria-expanded="false">☰</button>
+
+    <nav class="navlinks" id="navlinks">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#work">Our Work</a>
+      <a href="#gallery">Gallery</a>
+      <a href="#packages">Support</a>
+      <a href="#contact">Contact</a>
+      <a class="btn" href="#contact">Get In Touch</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container">
+    <div class="hero-content">
+      <span class="tag">❤️ Nirmala Trust Foundation · Rohtas, Bihar</span>
+      <h1>Feed a Child,<br><span>Share a Smile,</span><br>Change a Life.</h1>
+      <p>
+        हमारा प्रयास है कि जरूरतमंद बच्चों तक भोजन, खुशियाँ और सहयोग पहुँचे।
+        आइए, मिलकर एक बेहतर कल बनाने की शुरुआत करें।
+      </p>
+      <div class="hero-actions">
+        <a class="btn" href="#work">हमारे कार्य देखें</a>
+        <a class="btn outline" href="#contact">हमसे संपर्क करें</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="stats">
+  <div class="container stats-grid">
+    <div><strong>❤️ सेवा</strong><span>समाज के लिए समर्पण</span></div>
+    <div><strong>🍲 भोजन</strong><span>जरूरतमंद बच्चों का सहयोग</span></div>
+    <div><strong>🤝 साथ</strong><span>आपके सहयोग से बेहतर भविष्य</span></div>
+  </div>
+</div>
+
+<section id="about">
+  <div class="container about-grid">
+    <div class="about-photo">
+      <img src="images/children-group.jpg"
+           alt="Nirmala Trust Foundation community activities"
+           onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=1000&q=85'">
+    </div>
+    <div class="about-copy">
+      <span class="eyebrow">हमारे बारे में</span>
+      <h2>Nirmala Trust Foundation</h2>
+      <p>
+        Nirmala Trust Foundation, Rohtas, Bihar के माध्यम से हमारा उद्देश्य
+        समाज में सहयोग, संवेदनशीलता और सकारात्मक बदलाव को बढ़ावा देना है।
+      </p>
+      <p>
+        बच्चों के साथ भोजन साझा करना, उनके विशेष दिनों को खुशियों से भरना
+        और जरूरतमंद लोगों की सहायता के प्रयास हमारे इस अभियान का हिस्सा हैं।
+      </p>
+      <ul class="check-list">
+        <li>बच्चों के लिए भोजन और सहयोग</li>
+        <li>जन्मदिन और खुशियों के कार्यक्रम</li>
+        <li>शिक्षा के प्रति जागरूकता</li>
+        <li>स्वास्थ्य और सामाजिक सहायता के प्रयास</li>
+      </ul>
+      <a class="btn green" href="#contact">हमसे जुड़ें</a>
+    </div>
+  </div>
+</section>
+
+<section class="works" id="work">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">हमारे कार्य</span>
+      <h2>छोटी-छोटी खुशियाँ, बड़ा बदलाव</h2>
+      <p>समाज में सकारात्मक बदलाव लाने के लिए सेवा और सहयोग की भावना से आगे बढ़ें।</p>
+    </div>
+
+    <div class="cards">
+      <article class="card">
+        <img src="images/food-distribution.jpg"
+             alt="बच्चों के लिए भोजन वितरण"
+             loading="lazy"
+             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=700&q=80'">
+        <div class="card-body">
+          <h3>🍲 भोजन सहायता</h3>
+          <p>बच्चों के साथ भोजन साझा करने और पोषण के प्रति जागरूकता बढ़ाने का प्रयास।</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/birthday-celebration.jpg"
+             alt="बच्चों के जन्मदिन का आयोजन"
+             loading="lazy"
+             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=80'">
+        <div class="card-body">
+          <h3>🎂 जन्मदिन की खुशियाँ</h3>
+          <p>बच्चों के विशेष दिनों को प्यार और खुशी के साथ मनाने का प्रयास।</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/education-support.jpg"
+             alt="बच्चों की शिक्षा"
+             loading="lazy"
+             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80'">
+        <div class="card-body">
+          <h3>📚 शिक्षा सहयोग</h3>
+          <p>शिक्षा के महत्व को बढ़ावा देना और बच्चों के उज्ज्वल भविष्य के लिए प्रेरित करना।</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="images/community-support.jpg"
+             alt="समुदाय की सहायता"
+             loading="lazy"
+             onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=700&q=80'">
+        <div class="card-body">
+          <h3>🤝 सामुदायिक सहयोग</h3>
+          <p>लोगों को एक साथ लाकर सेवा और सहयोग की भावना को मजबूत करना।</p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">हमारी फोटो गैलरी</span>
+      <h2>हमारे कार्यों की झलक</h2>
+      <p>यहाँ बच्चों, कार्यक्रमों और समाजसेवा से जुड़ी तस्वीरें दिखाई जाएँगी।</p>
+    </div>
+
+    <div class="gallery-grid">
+      <a href="images/children-event.jpg" target="_blank">
+        <img src="images/children-event.jpg" alt="बच्चों के कार्यक्रम की तस्वीर" loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?auto=format&fit=crop&w=700&q=80'">
+      </a>
+      <a href="images/child-food.jpg" target="_blank">
+        <img src="images/child-food.jpg" alt="बच्चों के लिए भोजन सहायता" loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1498837167922-ddd27525d352?auto=format&fit=crop&w=700&q=80'">
+      </a>
+      <a href="images/child-activity.jpg" target="_blank">
+        <img src="images/child-activity.jpg" alt="बच्चों की गतिविधि" loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503454537195-1dcabb73ffb9?auto=format&fit=crop&w=700&q=80'">
+      </a>
+      <a href="images/children-group.jpg" target="_blank">
+        <img src="images/children-group.jpg" alt="बच्चों का समूह" loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=700&q=80'">
+      </a>
+      <a href="images/birthday-celebration.jpg" target="_blank">
+        <img src="images/birthday-celebration.jpg" alt="जन्मदिन समारोह" loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=700&q=80'">
+      </a>
+      <a href="images/education-support.jpg" target="_blank">
+        <img src="images/education-support.jpg" alt="शिक्षा सहायता" loading="lazy"
+          onerror="this.onerror=null;this.src='https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=700&q=80'">
+      </a>
+    </div>
+
+    <p class="gallery-note">
+      नोट: वास्तविक कार्यक्रमों की अपनी तस्वीरें दिखाने के लिए उन्हें GitHub की images फोल्डर में अपलोड करें।
+    </p>
+  </div>
+</section>
+
+<section class="packages" id="packages">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">सहयोग अभियान</span>
+      <h2>आपका सहयोग, बच्चों की मुस्कान</h2>
+      <p>नीचे दिए गए पैकेज आपके साझा किए गए अभियान पोस्टर के अनुसार हैं।</p>
+    </div>
+
+    <div class="package-grid">
+      <article class="package">
+        <h3>❤️ छोटा सहयोग पैकेज</h3>
+        <div class="price">₹750</div>
+        <p>15 बच्चों के लिए</p>
+        <ul>
+          <li>भोजन पैकेज</li>
+          <li>केक और स्नैक्स</li>
+          <li>जन्मदिन का आयोजन</li>
+          <li>बैनर और वीडियो की व्यवस्था, अभियान के अनुसार</li>
+        </ul>
+        <a class="btn green" href="#contact">जानकारी लें</a>
+      </article>
+
+      <article class="package">
+        <h3>💙 विशेष सहयोग पैकेज</h3>
+        <div class="price">₹1500</div>
+        <p>20 बच्चों के लिए</p>
+        <ul>
+          <li>भोजन पैकेज</li>
+          <li>केक और स्नैक्स वितरण</li>
+          <li>खुशियों का कार्यक्रम</li>
+          <li>बैनर और वीडियो की व्यवस्था, अभियान के अनुसार</li>
+        </ul>
+        <a class="btn green" href="#contact">जानकारी लें</a>
+      </article>
+
+      <article class="package">
+        <h3>💜 विशेष उत्सव पैकेज</h3>
+        <div class="price">₹1800</div>
+        <p>25 बच्चों के लिए</p>
+        <ul>
+          <li>भोजन पैकेज</li>
+          <li>केक और स्नैक्स वितरण</li>
+          <li>बच्चों के लिए उत्सव</li>
+          <li>बैनर, फोटो और वीडियो की व्यवस्था, अभियान के अनुसार</li>
+        </ul>
+        <a class="btn green" href="#contact">जानकारी लें</a>
+      </article>
+    </div>
+
+    <div class="donation-note">
+      <strong>महत्वपूर्ण:</strong> ये पैकेज आपके दिए हुए पोस्टर की जानकारी पर आधारित हैं।
+      किसी भी भुगतान से पहले ट्रस्ट से सीधे संपर्क करके राशि, सुविधाओं और भुगतान की पुष्टि करें।
+      यह वेबसाइट अपने आप कोई भुगतान स्वीकार नहीं करती।
+    </div>
+  </div>
+</section>
+
+<div class="banner">
+  <h2>आइए, मिलकर खुशियाँ बाँटें ❤️</h2>
+  <p>आपका समय, सहयोग और संवेदनशीलता किसी बच्चे के जीवन में सकारात्मक बदलाव ला सकती है।</p>
+  <a class="btn" href="#contact">आज ही संपर्क करें</a>
+</div>
+
+<section id="contact">
+  <div class="container">
+    <div class="section-head">
+      <span class="eyebrow">संपर्क करें</span>
+      <h2>हमसे जुड़ें</h2>
+      <p>सहयोग, कार्यक्रम या अन्य जानकारी के लिए संपर्क करें।</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="contact-info">
+        <h3>Nirmala Trust Foundation</h3>
+        <div class="contact-item">📞 <strong>फोन:</strong><br>
+          <a href="tel:+919708933584">9708933584</a>
+        </div>
+        <div class="contact-item">📍 <strong>पता:</strong><br>
+          Rohtas, Bihar – 821312, India
+        </div>
+        <div class="contact-item">💚 <strong>हमारा उद्देश्य:</strong><br>
+          सेवा, सहयोग और बेहतर भविष्य।
+        </div>
+        <a class="btn" href="https://wa.me/919708933584" target="_blank" rel="noopener">
+          WhatsApp पर संपर्क करें
+        </a>
+      </div>
+
+      <form class="contact-form" id="contactForm">
+        <h3>अपना संदेश भेजें</h3>
+        <div class="field">
+          <label for="name">आपका नाम</label>
+          <input id="name" name="name" required maxlength="100" placeholder="अपना नाम लिखें">
+        </div>
+        <div class="field">
+          <label for="phone">मोबाइल नंबर</label>
+          <input id="phone" name="phone" required inputmode="numeric"
+                 pattern="[0-9]{10}" maxlength="10" placeholder="10 अंकों का नंबर">
+        </div>
+        <div class="field">
+          <label for="purpose">संपर्क का उद्देश्य</label>
+          <select id="purpose" name="purpose">
+            <option>सामान्य जानकारी</option>
+            <option>भोजन सहायता</option>
+            <option>जन्मदिन कार्यक्रम</option>
+            <option>स्वयंसेवक बनना</option>
+            <option>सहयोग पैकेज की जानकारी</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="message">संदेश</label>
+          <textarea id="message" name="message" maxlength="1000"
+                    placeholder="अपना संदेश लिखें"></textarea>
+        </div>
+        <button class="btn green" type="submit">WhatsApp पर संदेश भेजें</button>
+        <p style="font-size:12px;color:#637168">
+          बटन दबाने पर WhatsApp खुलेगा। संदेश भेजने से पहले आप उसे देख सकते हैं।
+        </p>
+      </form>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <h3>NIRMALA TRUST FOUNDATION</h3>
+        <p>Together We Can...<br>मिलकर एक बेहतर भविष्य बनाएँ।</p>
+        <p>📍 Rohtas, Bihar – 821312</p>
+      </div>
+      <div>
+        <h3>Quick Links</h3>
+        <a href="#about">हमारे बारे में</a>
+        <a href="#work">हमारे कार्य</a>
+        <a href="#gallery">फोटो गैलरी</a>
+        <a href="#packages">सहयोग अभियान</a>
+      </div>
+      <div>
+        <h3>संपर्क</h3>
+        <a href="tel:+919708933584">📞 9708933584</a>
+        <a href="https://wa.me/919708933584" target="_blank" rel="noopener">WhatsApp</a>
+        <a href="#contact">संपर्क फॉर्म</a>
+      </div>
+    </div>
+    <div class="copyright">
+      © <span id="year"></span> Nirmala Trust Foundation. All rights reserved.
+    </div>
+  </div>
+</footer>
+
+<a class="whatsapp" href="https://wa.me/919708933584"
+   target="_blank" rel="noopener" aria-label="WhatsApp पर संपर्क करें">
+  ☎ WhatsApp
+</a>
+
+<script>
+const menuBtn = document.getElementById("menuBtn");
+const navlinks = document.getElementById("navlinks");
+
+menuBtn.addEventListener("click", () => {
+  const isOpen = navlinks.classList.toggle("open");
+  menuBtn.setAttribute("aria-expanded", String(isOpen));
+});
+
+document.querySelectorAll("#navlinks a").forEach(link => {
+  link.addEventListener("click", () => {
+    navlinks.classList.remove("open");
+    menuBtn.setAttribute("aria-expanded", "false");
+  });
+});
+
+document.getElementById("year").textContent = new Date().getFullYear();
+
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = document.getElementById("name").value.trim();
+  const phone = document.getElementById("phone").value.trim();
+  const purpose = document.getElementById("purpose").value;
+  const message = document.getElementById("message").value.trim();
+
+  if (!/^[0-9]{10}$/.test(phone)) {
+    alert("कृपया 10 अंकों का सही मोबाइल नंबर लिखें।");
+    return;
+  }
+
+  const text =
+    "नमस्ते Nirmala Trust Foundation!\n\n" +
+    "नाम: " + name + "\n" +
+    "मोबाइल: " + phone + "\n" +
+    "उद्देश्य: " + purpose + "\n" +
+    "संदेश: " + (message || "कोई अतिरिक्त संदेश नहीं");
+
+  window.open(
+    "https://wa.me/919708933584?text=" + encodeURIComponent(text),
+    "_blank",
+    "noopener"
+  );
+});
+</script>
+
+</body>
+</html>
+```
